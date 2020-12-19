@@ -1,0 +1,13 @@
+<div class="period-switch"
+     *ngIf="selectedPeriod$ | async as period"
+     fxLayout="row"
+     fxLayoutAlign="center center"
+     fxLayoutGap="20px">
+    <button class="period-switch__button"
+            [class.selected]="period === 'april'"
+            (click)="changePeriod('april')">Апрель</button>
+    <p>&nbsp;/&nbsp;</p>
+    <button class="period-switch__button"
+            [class.selected]="period === 'all'"
+            (click)="changePeriod('all')">Весь период</button>
+</div>

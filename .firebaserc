@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pandemic-trud": {
+      "hosting": {
+        "pandemic-trud": [
+          "pandemic-trud"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import 'color-constants';
+
+.map {
+  margin-top: 25px;
+  position: relative;
+  max-width: calc(100vw - 40px);
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  .map__legend-group {
+    display: flex;
+    color: $white;
+    align-items: center;
+
+    .map__legend-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+
+      &.map__legend-dot_attack {
+        border: 0.5px solid $red;
+      }
+
+      &.map__legend-dot_attack-with-victim {
+        background-color: $red;
+      }
+
+      &.map__legend-dot_prevented {
+        background-color: $color_gradient_2_2;
+      }
+    }
+  }
+
+  .map__scrollable-container {
+    position: relative;
+    margin-top: 25px;
+    // add 1px margin to show bottom border
+    margin-bottom: 1px;
+    margin-right: 1px;
+  }
+
+  .map__reg-tile {
+    box-shadow:
+      1px 0 0 0 $white,
+      0 1px 0 0 $white,
+      1px 1px 0 0 $white,   /* Just to fix the corner */
+      1px 0 0 0 $white inset,
+      0 1px 0 0 $white inset;
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
+
+    &.map__reg-tile_none {
+      background-color: $gray;
+    }
+
+    &.map__reg-tile_low {
+      background-color: $color_gradient_1_1;
+    }
+
+    &.map__reg-tile_medium-low {
+      background-color: $color_gradient_1_2;
+    }
+
+    &.map__reg-tile_medium-high {
+      background-color: $color_gradient_1_3;
+    }
+
+    &.map__reg-tile_high {
+      background-color: $color_gradient_1_4;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .map {
+    margin: 25px auto 1px;
+
+    .map__legend {
+      position: absolute;
+      top: 350px;
+      left: 500px;
+    }
+
+    .map__reg-tile.map__reg-tile_right-edge,
+    .map__reg-tile_empty.map__reg-tile_right-edge,
+    .map__reg-tile.map__reg-tile__empty {
+      border-right: none;
+    }
+  }
+}

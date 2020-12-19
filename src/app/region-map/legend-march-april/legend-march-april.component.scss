@@ -1,0 +1,33 @@
+@import "color-constants";
+
+.legend {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+
+  .legend__gradient-text {
+    color: $white;
+  }
+
+  .legend__gradient-tile  {
+    width: 15px;
+    height: 15px;
+  }
+
+  .legend__gradient-1-tile {
+    background-color: $color_gradient_1_1;
+  }
+
+  .legend__gradient-2-tile {
+    background-color: $color_gradient_1_2;
+  }
+
+  .legend__gradient-3-tile {
+    background-color: $color_gradient_1_3;
+  }
+
+  .legend__gradient-4-tile {
+    background-color: $color_gradient_1_4;
+  }
+}

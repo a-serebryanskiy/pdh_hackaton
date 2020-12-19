@@ -1,0 +1,17 @@
+@import "src/assets/styles/color-constants";
+
+.dimension-switch {
+
+  .dimension-switch__button {
+    color: $white;
+    background: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+
+    &.selected {
+      color: $red;
+      font-family: "Roboto Black", sans-serif;
+    }
+  }
+}

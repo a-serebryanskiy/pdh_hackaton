@@ -1,0 +1,15 @@
+<div class="dimension-switch"
+     *ngIf="selectedDimension$ | async as dimension"
+     fxLayout="row"
+     fxLayoutAlign="center center"
+     fxLayoutGap="20px">
+    <a class="dimension-switch__button"
+            [class.selected]="dimension === 'march/april'"
+            routerLink="/march-april">Безработица сравнение марта и апреля</a>
+    <button class="dimension-switch__button"
+            [class.selected]="dimension === 'stability'"
+            routerLink="/stability">Индекс устойчивости региона??</button>
+    <button class="dimension-switch__button"
+            [class.selected]="dimension === 'vulnerable'"
+            routerLink="/vulnerable">Доля уязвимых категорий</button>
+</div>

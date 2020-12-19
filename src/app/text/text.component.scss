@@ -1,0 +1,13 @@
+@import "color-constants";
+
+::ng-deep .text-block {
+  font-size: 14px;
+}
+
+@media (min-width: 800px) {
+  .text-block {
+    margin: 20px auto;
+    max-width: 600px;
+    color: $white;
+  }
+}

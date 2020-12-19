@@ -1,0 +1,50 @@
+@import 'color-constants';
+
+$region-side-size: 43px;
+$dot-side-size: 2px;
+
+.region {
+  padding: 1px 1px 1px 2px;
+  min-width: $region-side-size;
+  max-width: $region-side-size;
+  min-height: $region-side-size;
+  max-height: $region-side-size;
+  transition: all 0.5s ease;
+
+  .region__name {
+    font-family: "Roboto Black", sans-serif;
+    size: 14px;
+    color: $white;
+    margin-bottom: 1px;
+  }
+
+  &.region_empty {
+    .region__name {
+      color: $gray;
+    }
+  }
+
+  .region__dots {
+    flex-wrap: wrap;
+  }
+
+  .region__dot {
+    width: $dot-side-size;
+    height: $dot-side-size;
+    border-radius: 50%;
+    background-color: black;
+    margin-top: 3px;
+
+    &.region__dot_attack {
+      border: 0.5px solid $red;
+    }
+
+    &.region__dot_attack-with-victims {
+      background-color: $red;
+    }
+
+    &.region__dot_prevented {
+      background-color: $color_gradient_2_2;
+    }
+  }
+}

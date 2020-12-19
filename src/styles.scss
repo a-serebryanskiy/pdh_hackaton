@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "color-constants";
+
+body, html {
+  font-family: "Roboto Regular", sans-serif;
+  background-color: $black;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mat-body p, .mat-body-1 p, .mat-typography p {
+  margin: 0;
+}

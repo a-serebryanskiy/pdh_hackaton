@@ -1,0 +1,47 @@
+@import "color-constants";
+
+.region-info-dialog {
+  position: relative;
+
+  mat-icon {
+    margin-left: 5px;
+    width: unset;
+    height: unset;
+  }
+
+  .region-info-dialog__close-icon {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+  }
+
+  .region-info-dialog__accident {
+    padding: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &.region-info-dialog__accident_attack {
+      .region-info-dialog__date {
+        color: $red;
+      }
+    }
+
+    &.region-info-dialog__accident_prevented {
+      .region-info-dialog__date {
+        color: $color_gradient_2_2;
+      }
+    }
+  }
+
+  .region-info-dialog__date {
+    font-family: "Roboto Black", sans-serif;
+  }
+
+  .region-info-dialog__weapons {
+    display: flex;
+
+
+  }
+}

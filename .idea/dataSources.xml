@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="hackaton@localhost" uuid="59152a1f-b393-4d12-b886-cc56e772bfd3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/hackaton</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="postgres@server" uuid="b91ce10e-9d21-4059-8a03-f9882dd2f252">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://188.166.107.232:6000/hackaton</jdbc-url>
+    </data-source>
+  </component>
+</project>

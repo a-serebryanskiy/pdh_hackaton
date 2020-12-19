@@ -1,0 +1,50 @@
+@import "color-constants";
+
+.signature {
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+
+  .signature__source {
+    font-family: "Roboto Regular", sans-serif;
+    font-size: 15px;
+    color: $white;
+
+    &.signature__source_in-the-end {
+      display: block;
+    }
+
+    &.signature__source_at-start {
+      display: none;
+    }
+  }
+
+  .signature__logo {
+    margin-left: 25px;
+    width: 173px;
+  }
+}
+
+@media (max-width: 650px) {
+  .signature {
+    justify-content: start;
+    flex-direction: column;
+
+    .signature__source {
+      &.signature__source_in-the-end {
+        display: none;
+      }
+
+      &.signature__source_at-start {
+        display: block;
+      }
+    }
+
+    .signature__logo {
+      margin-left: 0;
+      margin-top: 10px;;
+    }
+  }
+}
+

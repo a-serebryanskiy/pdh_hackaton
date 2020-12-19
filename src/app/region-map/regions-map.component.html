@@ -1,0 +1,24 @@
+<div class="map"
+     [style.width.px]="regTileSideSize * 19 + 4"
+     *ngIf="regions$ | async as regions">
+  <ng-container *ngIf="selectedDimension$ | async as selectedDimension">
+    <div class="map__legend" [ngSwitch]="selectedDimension">
+      <app-legend-march-april *ngSwitchCase="'march/april'"></app-legend-march-april>
+      <app-legend-stability *ngSwitchCase="'stability'"></app-legend-stability>
+      <app-legend-vulnerable *ngSwitchCase="'vulnerable'"></app-legend-vulnerable>
+    </div>
+    <div class="map__scrollable-container"
+         [style.width.px]="regTileSideSize * 19"
+         [style.height.px]="regTileSideSize * 11">
+      <app-reg-tile class="map__reg-tile"
+                    (click)="openRegionDialog(region)"
+                    [@inOutAnimation]
+                    *ngFor="let region of regions"
+                    [region]="region"
+                    [style.color]="region.color"
+                    [style.left.px]="region.col * regTileSideSize"
+                    [style.top.px]="region.row * regTileSideSize">
+      </app-reg-tile>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,16 @@
+@import 'color-constants';
+
+h1 {
+  font-family: "Roboto Black", sans-serif;
+  font-size: 32px;
+  color: $white;
+  line-height: 1;
+  margin: 20px auto;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 28px;
+  }
+}

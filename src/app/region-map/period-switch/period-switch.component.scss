@@ -1,0 +1,15 @@
+@import "color-constants";
+
+.period-switch {
+
+
+  .period-switch__button {
+    color: $black;
+    background: none;
+
+    &.selected {
+      color: $red;
+      font-family: "Roboto Black", sans-serif;
+    }
+  }
+}

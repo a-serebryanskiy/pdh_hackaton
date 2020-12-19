@@ -1,0 +1,11 @@
+@import "color-constants";
+
+.root {
+  padding: 20px;
+
+  .root__bg-img {
+    position: absolute;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+}

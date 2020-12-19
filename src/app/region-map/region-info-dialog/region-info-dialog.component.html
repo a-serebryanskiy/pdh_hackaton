@@ -1,0 +1,10 @@
+<div class="region-info-dialog" (click)="act()">
+  <mat-icon class="region-info-dialog__close-icon" mat-dialog-close>close</mat-icon>
+  <p class="region-info-dialog__name">{{region.regionFullName}}</p>
+  <div class="region-info-dialog__shape">
+    <mat-icon #regionShape [svgIcon]="'region_' + region.regionCode"></mat-icon>
+<!--    <img #regionShape class="region-info-dialog__shape-svg"-->
+<!--         [src]="'assets/svg/region_shapes/' + region.regionCode + '.svg'"-->
+<!--         [alt]="'region ' + region.regionFullName + ' shape'">-->
+  </div>
+</div>
