@@ -1,6 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "color-constants";
+@font-face {
+  font-family: 'Montserrat Regular';
+  src: url('assets/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Montserrat Black';
+  src: url('assets/fonts/Montserrat/Montserrat-Black.ttf');
+}
+@font-face {
+  font-family: 'Montserrat Light';
+  src: url('assets/fonts/Montserrat/Montserrat-Light.ttf');
+}
 
 body, html {
   font-family: "Montserrat Regular", sans-serif;
