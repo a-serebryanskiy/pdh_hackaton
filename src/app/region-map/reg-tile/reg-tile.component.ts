@@ -12,6 +12,8 @@ export class RegTileComponent implements OnInit {
 
   @Input()
   region: Region;
+  @Input()
+  showMaxMonthIcon: boolean;
 
   constructor() { }
 

@@ -20,11 +20,24 @@ mat-icon {
 
   .region__experience-height {
     position: absolute;
-    left:0;
+    left: 2px;
     bottom: 0;
     z-index: -1;
     background-color: $blue;
     width: $region-side-size - 2px;
+  }
+
+  .region__pik-icon {
+    fill: $white;
+    width: $region-side-size - 2px;
+    height: auto;
+    padding-top: 6px;
+
+    ::ng-deep {
+      .st0 {
+        fill: $white;
+      }
+    }
   }
 
   .region__name {

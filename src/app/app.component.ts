@@ -15,6 +15,7 @@ export class AppComponent {
     private sanitizer: DomSanitizer
   ) {
     iconRegistry.addSvgIcon('star', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/star01.svg'));
+    iconRegistry.addSvgIcon('pik', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/sumpik01.svg'));
     // iconRegistry.addSvgIcon('knife', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/knife.svg'));
   }
 }

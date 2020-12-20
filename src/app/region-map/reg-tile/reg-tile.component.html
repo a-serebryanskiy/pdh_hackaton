@@ -7,4 +7,8 @@
        class="region__experience-height"
        [style.height.px]="region.experienceHeight">
   </div>
+  <mat-icon *ngIf="showMaxMonthIcon && (region.maxUnemployedMonth === 6 || region.maxUnemployedMonth === 7)"
+            svgIcon="pik"
+       class="region__pik-icon">
+  </mat-icon>
 </div>

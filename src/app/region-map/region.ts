@@ -6,7 +6,7 @@ export class Region {
   longitude: number;
   unemployedByMonth: any = {};
   maxUnemployedForPeriod: number;
-  totalUnemployedMonth: number;
+  maxUnemployedMonth: number;
   totalUnemployedForPeriod: number;
   rank: number;
   experience: number;

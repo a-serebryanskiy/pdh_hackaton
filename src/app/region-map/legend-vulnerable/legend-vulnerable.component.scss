@@ -2,9 +2,20 @@
 
 .legend {
   display: grid;
-  grid-template-columns: 25px 1fr;
-  grid-column-gap: 3px;
+  grid-template-columns: 43px 1fr;
+  grid-column-gap: 10px;
   grid-row-gap: 3px;
+
+  .legend__pik-icon {
+    width: 43px;
+    height: auto;
+
+    ::ng-deep {
+      .st0 {
+        fill: $white;
+      }
+    }
+  }
 
   .legend__gradient-text {
     color: $white;

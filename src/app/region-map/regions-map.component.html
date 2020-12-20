@@ -10,6 +10,7 @@
     <div class="map__legend" [ngSwitch]="selectedDimension">
       <app-legend-march-april *ngSwitchCase="'march/april'"></app-legend-march-april>
       <app-legend-stability *ngSwitchCase="'stability'"></app-legend-stability>
+      <app-legend-vulnerable *ngSwitchCase="'vulnerable'"></app-legend-vulnerable>
     </div>
     <div class="map__scrollable-container"
          [style.width.px]="regTileSideSize * 19"
@@ -18,6 +19,7 @@
                     (click)="openRegionDialog(region)"
                     [@inOutAnimation]
                     *ngFor="let region of regions"
+                    [showMaxMonthIcon]="selectedDimension === 'vulnerable'"
                     [region]="region"
                     [ngClass]="region.colorDepth"
                     [class.march-april-dimension]="selectedDimension === 'march/april'"

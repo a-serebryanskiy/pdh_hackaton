@@ -1381,7 +1381,7 @@ export const initialState: RegionsState = {
         for (let i = 3; i < 10; i++) {
             region.unemployedByMonth[i] = info['unemployedForMonth' + i];
         }
-        region.totalUnemployedMonth = info.totalUnemployedMonth;
+        region.maxUnemployedMonth = info.totalUnemployedMonth;
         region.totalUnemployedForPeriod = info.totalUnemployedForPeriod;
         region.rank = Number.isInteger(info.rank) ?
             info.rank :
