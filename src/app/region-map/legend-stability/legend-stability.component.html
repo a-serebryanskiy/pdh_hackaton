@@ -1,14 +1,11 @@
+<p class="legend__label">Апрель-май от общего прироста безработицы:</p>
 <div class="legend">
     <div class="legend__gradient-tile legend__gradient-1-tile"></div>
-    <div class="legend__gradient-text legend__gradient-1-text">Доля меньше 13%</div>
-    <div class="legend__gradient-tile legend__gradient-2-tile"></div>
-    <div class="legend__gradient-text legend__gradient-2-text">Доля меньше 26%</div>
-    <div class="legend__gradient-tile legend__gradient-3-tile"></div>
-    <div class="legend__gradient-text legend__gradient-3-text">Доля меньше 39%</div>
-    <div class="legend__gradient-tile legend__gradient-4-tile"></div>
-    <div class="legend__gradient-text legend__gradient-4-text">Доля меньше 52%</div>
+    <div class="legend__gradient-text legend__gradient-1-text">меньше 13%</div>
     <div class="legend__gradient-tile legend__gradient-5-tile"></div>
-    <div class="legend__gradient-text legend__gradient-5-text">Доля больше 52%</div>
-    <mat-icon svgIcon="start"></mat-icon>
-    <div class="legend__gradient-text legend__gradient-5-text">Ранг устойчивости региона на рынке труда</div>
+    <div class="legend__gradient-text legend__gradient-5-text">больше 52%</div>
+    <div fxLayout="row" fxLayoutGap="2px">
+        <mat-icon *ngFor="let star of [1,2,3,4,5]" svgIcon="star"></mat-icon>
+    </div>
+    <div class="legend__gradient-text legend__gradient-5-text">высокая устойчивость</div>
 </div>

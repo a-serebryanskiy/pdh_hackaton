@@ -1,7 +1,12 @@
-<div class="map"
-     [style.width.px]="regTileSideSize * 19 + 4"
-     *ngIf="regions$ | async as regions">
-  <ng-container *ngIf="selectedDimension$ | async as selectedDimension">
+<ng-container *ngIf="selectedDimension$ | async as selectedDimension">
+  <ng-container [ngSwitch]="selectedDimension">
+    <h2 class="map__heading" *ngSwitchCase="'march/april'">Во сколько раз выросла регистрируемая безработица в апреле</h2>
+    <h2 class="map__heading" *ngSwitchCase="'stability'">Доля апреля и мая в общем приросте безработицы</h2>
+    <h2 class="map__heading" *ngSwitchCase="'vulnerable'">Доля безработных без стажа работы за последний год</h2>
+  </ng-container>
+  <div class="map"
+       [style.width.px]="regTileSideSize * 19 + 4"
+       *ngIf="regions$ | async as regions">
     <div class="map__legend" [ngSwitch]="selectedDimension">
       <app-legend-march-april *ngSwitchCase="'march/april'"></app-legend-march-april>
       <app-legend-stability *ngSwitchCase="'stability'"></app-legend-stability>
@@ -23,5 +28,6 @@
                     [style.top.px]="region.row * regTileSideSize">
       </app-reg-tile>
     </div>
-  </ng-container>
-</div>
+  </div>
+</ng-container>
+

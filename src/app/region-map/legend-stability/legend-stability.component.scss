@@ -1,9 +1,15 @@
 @import "color-constants";
 
+.legend__label {
+  color: $white;
+  margin-bottom: 5px;
+}
+
+
 .legend {
   display: grid;
-  grid-template-columns: 25px 1fr;
-  grid-column-gap: 3px;
+  grid-template-columns: 40px 1fr;
+  grid-column-gap: 5px;
   grid-row-gap: 3px;
 
   .legend__gradient-text {
@@ -32,6 +38,11 @@
   }
 
   .legend__gradient-5-tile {
-    background-color: $color_gradient_1_4;
+    background-color: $color_gradient_1_5;
+  }
+
+  mat-icon {
+    fill: $white;
+    width: 20px;
   }
 }

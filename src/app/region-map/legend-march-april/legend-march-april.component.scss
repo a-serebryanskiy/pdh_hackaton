@@ -1,4 +1,8 @@
 @import "color-constants";
+.legend__label {
+  color: $white;
+  margin-bottom: 5px;
+}
 
 .legend {
   display: grid;
