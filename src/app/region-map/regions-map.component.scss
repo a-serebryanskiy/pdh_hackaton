@@ -2,8 +2,11 @@
 
 .map__heading {
   color: $white;
-  font-size: 20px;
   text-align: center;
+  font-size: 24px;
+  font-family: "Montserrat Light", sans-serif;
+  max-width: 700px;
+  margin: auto;
 }
 
 .map {
