@@ -8,10 +8,11 @@
     outline: none;
     border: none;
     text-decoration: none;
+    font-family: "Montserrat Light", sans-serif;
 
     &.selected {
-      color: $red;
-      font-family: "Roboto Black", sans-serif;
+      color: $primary;
+      font-family: "Montserrat Black", sans-serif;
     }
   }
 }

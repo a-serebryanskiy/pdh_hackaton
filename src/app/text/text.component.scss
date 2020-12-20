@@ -2,6 +2,10 @@
 
 ::ng-deep .text-block {
   font-size: 14px;
+
+  .bold {
+    font-family: "Montserrat Black", sans-serif;
+  }
 }
 
 @media (min-width: 800px) {

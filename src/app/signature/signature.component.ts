@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signature.component.scss']
 })
 export class SignatureComponent implements OnInit {
-  source = 'открытые данные';
+  source = 'Роструд';
 
   constructor() { }
 

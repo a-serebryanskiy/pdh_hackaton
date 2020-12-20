@@ -15,7 +15,10 @@
                     [@inOutAnimation]
                     *ngFor="let region of regions"
                     [region]="region"
-                    [style.color]="region.color"
+                    [ngClass]="region.colorDepth"
+                    [class.march-april-dimension]="selectedDimension === 'march/april'"
+                    [class.stability-dimension]="selectedDimension === 'stability'"
+                    [class.vulnerable-dimension]="selectedDimension === 'vulnerable'"
                     [style.left.px]="region.col * regTileSideSize"
                     [style.top.px]="region.row * regTileSideSize">
       </app-reg-tile>

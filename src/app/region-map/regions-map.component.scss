@@ -7,30 +7,6 @@
   overflow-x: scroll;
   overflow-y: hidden;
 
-  .map__legend-group {
-    display: flex;
-    color: $white;
-    align-items: center;
-
-    .map__legend-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-
-      &.map__legend-dot_attack {
-        border: 0.5px solid $red;
-      }
-
-      &.map__legend-dot_attack-with-victim {
-        background-color: $red;
-      }
-
-      &.map__legend-dot_prevented {
-        background-color: $color_gradient_2_2;
-      }
-    }
-  }
-
   .map__scrollable-container {
     position: relative;
     margin-top: 25px;
@@ -41,33 +17,36 @@
 
   .map__reg-tile {
     box-shadow:
-      1px 0 0 0 $white,
-      0 1px 0 0 $white,
-      1px 1px 0 0 $white,   /* Just to fix the corner */
-      1px 0 0 0 $white inset,
-      0 1px 0 0 $white inset;
+      1px 0 0 0 $black,
+      0 1px 0 0 $black,
+      1px 1px 0 0 $black,   /* Just to fix the corner */
+      1px 0 0 0 $black inset,
+      0 1px 0 0 $black inset;
     z-index: 1;
     position: absolute;
     cursor: pointer;
 
-    &.map__reg-tile_none {
-      background-color: $gray;
-    }
+    &.march-april-dimension,
+    &.stability-dimension {
+      &.low {
+        background-color: $color_gradient_1_1;
+      }
 
-    &.map__reg-tile_low {
-      background-color: $color_gradient_1_1;
-    }
+      &.medium-low {
+        background-color: $color_gradient_1_2;
+      }
 
-    &.map__reg-tile_medium-low {
-      background-color: $color_gradient_1_2;
-    }
+      &.medium {
+        background-color: $color_gradient_1_3;
+      }
 
-    &.map__reg-tile_medium-high {
-      background-color: $color_gradient_1_3;
-    }
+      &.medium-high {
+        background-color: $color_gradient_1_4;
+      }
 
-    &.map__reg-tile_high {
-      background-color: $color_gradient_1_4;
+      &.high {
+        background-color: $color_gradient_1_5;
+      }
     }
   }
 }

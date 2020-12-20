@@ -16,18 +16,22 @@
   }
 
   .legend__gradient-1-tile {
-    background-color: $color_gradient_2_1;
+    background-color: $color_gradient_1_1;
   }
 
   .legend__gradient-2-tile {
-    background-color: $color_gradient_2_2;
+    background-color: $color_gradient_1_2;
   }
 
   .legend__gradient-3-tile {
-    background-color: $color_gradient_2_3;
+    background-color: $color_gradient_1_3;
   }
 
   .legend__gradient-4-tile {
-    background-color: $color_gradient_2_4;
+    background-color: $color_gradient_1_4;
+  }
+
+  .legend__gradient-5-tile {
+    background-color: $color_gradient_1_4;
   }
 }

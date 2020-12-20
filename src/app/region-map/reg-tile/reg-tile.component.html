@@ -1,3 +1,10 @@
 <div class="region">
   <p class="region__name">{{region.regionShortName}}</p>
+  <div *ngIf="region.stars && region.stars.length > 0" fxLayout="row" fxLayoutGap="2px">
+    <mat-icon svgIcon="star" *ngFor="let star of region.stars"></mat-icon>
+  </div>
+  <div *ngIf="region.experienceHeight > 0"
+       class="region__experience-height"
+       [style.height.px]="region.experienceHeight">
+  </div>
 </div>

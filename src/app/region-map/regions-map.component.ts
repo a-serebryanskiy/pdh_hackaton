@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Region} from './region';
-import {Observable} from 'rxjs';
+import {combineLatest, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Store} from '@ngrx/store';
 import {RegionsState} from '../../store/clusters/reducer';
@@ -45,14 +45,77 @@ export class RegionsMapComponent implements OnInit {
     lastColIndex: number;
 
     constructor(
-        private store: Store<RegionsState>,
-        private dialog: MatDialog
+        private store: Store<RegionsState>
     ) {
     }
 
     ngOnInit(): void {
-        this.regions$ = this.store.select(selectRegions);
         this.selectedDimension$ = this.store.select(selectSelectedDimension);
+        this.regions$ = combineLatest([this.store.select(selectRegions), this.selectedDimension$]).pipe(
+            map(([regions, selectedDimension]) => {
+                return this.computeRegionsColors(regions, selectedDimension);
+            })
+        );
+    }
+
+    private computeRegionsColors(regions: Region[], selectedDimension: string): Region[] {
+        const maxMatchAprilProportion = regions.map(region => region.unemployedByMonth[4] / region.unemployedByMonth[3])
+            .reduce((acc, next) => next > acc ? next : acc, 0);
+        const maxToTotalProportion = regions.map(region => (region.unemployedByMonth[4] + region.unemployedByMonth[5]) / region.totalUnemployedForPeriod)
+            .reduce((acc, next) => next > acc ? next : acc, 0);
+        console.log(maxToTotalProportion);
+        const step = maxToTotalProportion / 5;
+        console.log(step * 1);
+        console.log(step * 2);
+        console.log(step * 3);
+        console.log(step * 4);
+
+        return [...regions].map(region => {
+            const regionCopy = {
+                ...region
+            };
+
+            switch (selectedDimension) {
+                case 'march/april': {
+                    const marchGrowth = region.unemployedByMonth[4];
+                    const aprilGrowth = region.unemployedByMonth[3];
+                    const proportion = marchGrowth / aprilGrowth;
+                    this.setColorDepthFromProportion(proportion, maxMatchAprilProportion, regionCopy);
+                    break;
+                }
+                case 'stability': {
+                    const proportion = (region.unemployedByMonth[4] + region.unemployedByMonth[5]) /
+                        region.totalUnemployedForPeriod;
+                    regionCopy.stars = [];
+                    for (let i = 0; i < region.rank; i += (85 / 5)) {
+                        regionCopy.stars.push('');
+                    }
+                    this.setColorDepthFromProportion(proportion, maxToTotalProportion, regionCopy);
+                    break;
+                }
+                case 'vulnerable': {
+                    regionCopy.experienceHeight = this.regTileSideSize * region.experience;
+                    this.setColorDepthFromProportion(region.experience, 1, regionCopy);
+                }
+            }
+            return regionCopy;
+        });
+    }
+
+    private setColorDepthFromProportion(proportion: number,
+                                        maxProportion: number,
+                                        regionCopy: Region) {
+        if (proportion / maxProportion < 0.2) {
+            regionCopy.colorDepth = 'low';
+        } else if (proportion / maxProportion < 0.4) {
+            regionCopy.colorDepth = 'medium-low';
+        } else if (proportion / maxProportion < 0.6) {
+            regionCopy.colorDepth = 'medium';
+        } else if (proportion / maxProportion < 0.8) {
+            regionCopy.colorDepth = 'medium-high';
+        } else {
+            regionCopy.colorDepth = 'high';
+        }
     }
 
     openRegionDialog(region: Region): void {

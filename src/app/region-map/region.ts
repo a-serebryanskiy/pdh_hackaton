@@ -4,9 +4,17 @@ export class Region {
   regionCode: number;
   latitude: number;
   longitude: number;
+  unemployedByMonth: any = {};
+  maxUnemployedForPeriod: number;
+  totalUnemployedMonth: number;
+  totalUnemployedForPeriod: number;
+  rank: number;
+  experience: number;
+  experienceHeight: number;
   row: number;
   col: number;
-  color: number;
+  stars: string[];
+  colorDepth: 'low' | 'medium-low' | 'medium' | 'medium-high' | 'high';
 
   constructor(
     regionShortName: string,
